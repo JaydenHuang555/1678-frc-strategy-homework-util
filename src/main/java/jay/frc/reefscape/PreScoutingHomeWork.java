@@ -1,15 +1,13 @@
 package jay.frc.reefscape;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.stream.JsonReader;
+
 import jay.frc.util.MathUtil;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
+import jay.frc.util.StringBuilder;
 
 public class PreScoutingHomeWork {
 
