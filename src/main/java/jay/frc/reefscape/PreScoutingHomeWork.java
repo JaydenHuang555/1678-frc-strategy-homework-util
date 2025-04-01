@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
+import jay.frc.util.MathUtil;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -25,17 +26,13 @@ public class PreScoutingHomeWork {
     }
 
     public static double findAverage(ArrayList<Integer> buffer) {
-        int sum = 0;
-        for(int i = 0; i < buffer.size(); i++) {
-            sum += buffer.get(i);
-        }
-        return (double)sum / (double)buffer.size();
+        return MathUtil.average(buffer);
     }
 
     public static void main(String args[]) throws Exception {
         try {
             String path;
-            path = args.length < 2 ? defaultFile : args[0];
+            path = args.length < 1 ? defaultFile : args[0];
             String built = buildStringFromFile(Files.newInputStream(Paths.get(path)));
             ScoringInfo info = new Gson().fromJson(built, ScoringInfo.class);
             System.out.println("l1 average:"+findAverage(info.l1));

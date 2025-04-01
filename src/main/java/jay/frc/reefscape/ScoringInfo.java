@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class ScoringInfo  {
 
-    public ArrayList<Integer> l1, l2, l3, l4, net, processor;
+    public ArrayList<Integer> l1, l2, l3, l4,
+                              net, processor;
 
     public void setL1(ArrayList<Integer> l1) {
         this.l1 = l1;
