@@ -25,24 +25,21 @@ public class PreScoutingHomeWork {
         return builder.toString();
     }
 
-    public static double findAverage(ArrayList<Integer> buffer) {
-        return MathUtil.average(buffer);
-    }
-
     public static void main(String args[]) throws Exception {
         try {
             String path;
-            path = args.length < 1 ? defaultFile : args[0];
+            path = args.length < 2 ? defaultFile : args[0];
             String built = buildStringFromFile(Files.newInputStream(Paths.get(path)));
             ScoringInfo info = new Gson().fromJson(built, ScoringInfo.class);
-            System.out.println("l1 average:"+findAverage(info.l1));
-            System.out.println("l2 average:"+findAverage(info.l2));
-            System.out.println("l3 average:"+findAverage(info.l3));
-            System.out.println("l4 average:"+findAverage(info.l4));
-            System.out.println("net average:"+findAverage(info.net));
-            System.out.println("processor average:"+findAverage(info.processor));
+            System.out.println("l1 average:"+ MathUtil.average(info.l1));
+            System.out.println("l2 average:"+MathUtil.average(info.l2));
+            System.out.println("l3 average:"+MathUtil.average(info.l3));
+            System.out.println("l4 average:"+MathUtil.average(info.l4));
+            System.out.println("net average:"+MathUtil.average(info.net));
+            System.out.println("processor average:"+MathUtil.average(info.processor));
         } catch (Exception e) {
             throw e;
         }
     }
+
 }
